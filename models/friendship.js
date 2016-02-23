@@ -1,17 +1,31 @@
 Friendships = new Mongo.Collection("friendships");
 
+Friendships.timelineIds = function(userId){
+    var timelineIds = this.findFaster({
+        userId: userId
+    }).map(function(f){
+        return f.friendId;
+    });
+    timelineIds.push(userId);
+    return timelineIds;
+};
+
 Friendships.follow = function(friendId){
-    this.insert({
+    var params = {
         userId: Meteor.userId(),
         friendId: friendId
-    });
+    };
+    this.insert(params);
+    winston.info("Friendships.follow: ", params);
 };
 
 Friendships.unfollow = function(friendId){
-    this.remove({
+    var params = {
         userId: Meteor.userId(),
         friendId: friendId
-    });
+    };
+    this.remove(params);
+    winston.info("Friendships.unfollow: ", params);
 };
 
 Friendships.isFollowing = function(friendId){
@@ -19,9 +33,6 @@ Friendships.isFollowing = function(friendId){
         userId: Meteor.userId(),
         friendId: friendId
     });
-};
-Friendships.followersAndFollowings = function(_id){
-    return this.find({$or: [{userId: _id},{friendId: _id}]});
 };
 
 Friendships.followings = function(userId){
@@ -32,12 +43,6 @@ Friendships.followers = function(friendId){
     return this.find({friendId: friendId}).count();
 };
 
-Friendships.timelineIds = function(userId){
-    var timelineIds = this.find({
-        userId: userId
-    }).map(function(f){
-        return f.friendId;
-    });
-    timelineIds.push(userId);
-    return timelineIds;
+Friendships.followersAndFollowings = function(_id){
+    return this.findFaster({$or: [{userId: _id},{friendId: _id}]});
 };

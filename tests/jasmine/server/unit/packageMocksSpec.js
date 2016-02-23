@@ -7090,7 +7090,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "5647bbe7a47a0018d9907980fc153b7dd402486e"
+                  "value": "c18ad1b9d9ec680f818053749db1c588da91dcf1"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7214,7 +7214,7 @@ var packageMetadata = {
             },
             "connections": {
               "type": "constant",
-              "value": 0
+              "value": 2
             },
             "timeout": {
               "type": "constant",
@@ -7837,6 +7837,12 @@ var packageMetadata = {
                 },
                 "deny": {
                   "type": "function"
+                },
+                "findFaster": {
+                  "type": "function"
+                },
+                "findOneFaster": {
+                  "type": "function"
                 }
               }
             }
@@ -7857,7 +7863,7 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "8ed1d527441e94eea678acb8ed34457beb26a3f9"
+          "value": "39d55cd86337ff542b1dfef2785b3b58410b1cbf"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
@@ -8040,6 +8046,12 @@ var packageMetadata = {
             },
             "deny": {
               "type": "function"
+            },
+            "findFaster": {
+              "type": "function"
+            },
+            "findOneFaster": {
+              "type": "function"
             }
           }
         },
@@ -8170,6 +8182,12 @@ var packageMetadata = {
               "type": "function"
             },
             "deny": {
+              "type": "function"
+            },
+            "findFaster": {
+              "type": "function"
+            },
+            "findOneFaster": {
               "type": "function"
             }
           }
@@ -9526,6 +9544,7 @@ var packageMetadata = {
       }
     }
   },
+  "appcache": {},
   "iron:location": {},
   "reactive-dict": {
     "ReactiveDict": {
@@ -10342,6 +10361,12 @@ var packageMetadata = {
         },
         "deny": {
           "type": "function"
+        },
+        "findFaster": {
+          "type": "function"
+        },
+        "findOneFaster": {
+          "type": "function"
         }
       }
     },
@@ -10376,6 +10401,12 @@ var packageMetadata = {
           "type": "function"
         },
         "deny": {
+          "type": "function"
+        },
+        "findFaster": {
+          "type": "function"
+        },
+        "findOneFaster": {
           "type": "function"
         }
       }
@@ -10412,6 +10443,12 @@ var packageMetadata = {
         },
         "deny": {
           "type": "function"
+        },
+        "findFaster": {
+          "type": "function"
+        },
+        "findOneFaster": {
+          "type": "function"
         }
       }
     },
@@ -10446,6 +10483,12 @@ var packageMetadata = {
           "type": "function"
         },
         "deny": {
+          "type": "function"
+        },
+        "findFaster": {
+          "type": "function"
+        },
+        "findOneFaster": {
           "type": "function"
         }
       }
@@ -10482,6 +10525,12 @@ var packageMetadata = {
         },
         "deny": {
           "type": "function"
+        },
+        "findFaster": {
+          "type": "function"
+        },
+        "findOneFaster": {
+          "type": "function"
         }
       }
     },
@@ -10517,6 +10566,12 @@ var packageMetadata = {
         },
         "deny": {
           "type": "function"
+        },
+        "findFaster": {
+          "type": "function"
+        },
+        "findOneFaster": {
+          "type": "function"
         }
       }
     },
@@ -10551,6 +10606,12 @@ var packageMetadata = {
           "type": "function"
         },
         "deny": {
+          "type": "function"
+        },
+        "findFaster": {
+          "type": "function"
+        },
+        "findOneFaster": {
           "type": "function"
         }
       }
@@ -10588,7 +10649,50 @@ var packageMetadata = {
       "type": "object",
       "members": {
         "karmaChilds": {
-          "type": "object"
+          "type": "object",
+          "members": {
+            "jasmine-client-unit": {
+              "type": "object",
+              "members": {
+                "taskName": {
+                  "type": "constant",
+                  "value": "jasmine-client-unit"
+                },
+                "appPath": {
+                  "type": "constant",
+                  "value": "/home/cesar/meteor-bird"
+                },
+                "pid": {
+                  "type": "constant",
+                  "value": 937
+                },
+                "getTaskName": {
+                  "type": "function"
+                },
+                "getChild": {
+                  "type": "function"
+                },
+                "getPid": {
+                  "type": "function"
+                },
+                "isDead": {
+                  "type": "function"
+                },
+                "isRunning": {
+                  "type": "function"
+                },
+                "readPid": {
+                  "type": "function"
+                },
+                "spawn": {
+                  "type": "function"
+                },
+                "kill": {
+                  "type": "function"
+                }
+              }
+            }
+          }
         },
         "getKarmaChild": {
           "type": "function"
@@ -10630,7 +10734,41 @@ var packageMetadata = {
       }
     }
   },
-  "session": {},
+  "meteorhacks:npm": {},
+  "npm-container": {},
+  "meteorhacks:inject-data": {
+    "InjectData": {
+      "type": "object"
+    }
+  },
+  "meteorhacks:picker": {
+    "Picker": {
+      "type": "object",
+      "members": {
+        "filterFunction": {
+          "type": "undefined"
+        },
+        "routes": {
+          "type": "array"
+        },
+        "subRouters": {
+          "type": "array"
+        },
+        "middlewares": {
+          "type": "array"
+        },
+        "middleware": {
+          "type": "function"
+        },
+        "route": {
+          "type": "function"
+        },
+        "filter": {
+          "type": "function"
+        }
+      }
+    }
+  },
   "livedata": {
     "DDP": {
       "type": "object",
@@ -10698,6 +10836,73 @@ var packageMetadata = {
     },
     "LivedataTest": {
       "type": "undefined"
+    }
+  },
+  "meteorhacks:fast-render": {
+    "FastRender": {
+      "type": "object",
+      "members": {
+        "frContext": {
+          "type": "object",
+          "members": {
+            "slot": {
+              "type": "constant",
+              "value": 4
+            },
+            "get": {
+              "type": "function"
+            },
+            "getOrNullIfOutsideFiber": {
+              "type": "function"
+            },
+            "withValue": {
+              "type": "function"
+            }
+          }
+        },
+        "route": {
+          "type": "function"
+        },
+        "handleRoute": {
+          "type": "function"
+        },
+        "handleOnAllRoutes": {
+          "type": "function"
+        },
+        "onAllRoutes": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "mongo-livedata": {},
+  "arunoda:find-faster": {
+    "FastRead": {
+      "type": "undefined"
+    }
+  },
+  "spiderable": {
+    "Spiderable": {
+      "type": "object",
+      "members": {
+        "userAgentRegExps": {
+          "type": "array"
+        }
+      }
+    }
+  },
+  "session": {},
+  "meteorhacks:async": {
+    "Async": {
+      "type": "object",
+      "members": {
+        "runSync": {
+          "type": "function"
+        },
+        "wrap": {
+          "type": "function"
+        }
+      }
     }
   }
 }

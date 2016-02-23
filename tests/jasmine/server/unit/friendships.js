@@ -20,6 +20,7 @@ describe("Friendships", function() {
     it("should return object when user is following", function(){
         var fakeResult = {userId: userId, friendId: friendId};
         spyOn(Friendships, "findOne").and.returnValue(fakeResult);
+        expect(Friendships.isFollowing(friendId)).toEqual(fakeResult);
         var findOneArgs =Friendships.findOne.calls.argsFor(0);
         var expectedArgs = [{userId: userId, friendId: friendId}];
         expect(expectedArgs).toEqual(findOneArgs);
@@ -76,15 +77,15 @@ describe("Friendships", function() {
     it("should return user's followings and followers", function(){
         var fakeResult = [
             {userId: userId, friendId: friendId},
-            {userId: userId, friendId: friendId}
+            {userId: friendId, friendId: userId}
         ];
         spyOn(Friendships,"find").and.returnValue(fakeResult);
         var result = Friendships.followersAndFollowings(userId);
-        expect(result).toEqual(fakeResult);
+        expect(result).toEqual(fakeResult);;
         var findArgs = Friendships.find.calls.argsFor(0);
         var expectedArgs = [{$or: [
             {userId: userId},
-            {friendId: friendId}
+            {friendId: userId}
         ]}];
         expect(expectedArgs).toEqual(findArgs);
     });

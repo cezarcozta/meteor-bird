@@ -11,10 +11,10 @@ describe("Posts", function(){
         spyOn(Meteor, "userId").and.returnValue(userId);
     });
     afterEach(function(){
-        jasmine.clock().unistall
+        jasmine.clock().uninstall();
     });
     it("should publish a post", function(){
-        spyOn(Posts,"insert");
+        spyOn(Posts, "insert");
         Posts.publish(message, userName);
         var insertedArgs = Posts.insert.calls.argsFor(0);
         var expectedArgs = [{
